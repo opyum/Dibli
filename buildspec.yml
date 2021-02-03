@@ -8,18 +8,18 @@ phases:
   pre_build:
     commands:
       - echo Restore started on `date`
-      - dotnet restore Dibli.csproj
+      - dotnet restore Dibli/Dibli.csproj
       
   build:
     commands:
       - echo Build started on `date`
-      - dotnet build Dibli.csproj
+      - dotnet build Dibli/Dibli.csproj
       
   post_build:
     commands:
       - echo Publish started on `date`
       # https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/dotnet-linux-platform-bundle-app.html
-      - dotnet publish -c Release -r linux-x64 --self-contained false Dibli.csproj
+      - dotnet publish -c Release -r linux-x64 --self-contained false Dibli/Dibli.csproj
       
 artifacts:
   files:
